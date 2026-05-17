@@ -61,8 +61,6 @@
 
 ➡ [hyeonwoo5729.tistory.com](https://hyeonwoo5729.tistory.com)
 
-![ohujj's stats](https://github-readme-stats.vercel.app/api?username=ohujj&show_icons=true&theme=tokyonight)
-
 ## 📫 Contact
 
 - Blog: [hyeonwoo5729.tistory.com](https://hyeonwoo5729.tistory.com)
