@@ -1,4 +1,5 @@
-# 안녕하세요, 백엔드 개발자입니다 👋
+# 안녕하세요, 백엔드 개발자 오현우 입니다 👋
+# Nice to Meet you, I'm Hyeonwoo Oh, and i'm Back-End Developer 👋
 
 서비스 회사로의 이직을 준비하며 동시성·결제·운영 안정성 같은 백엔드 깊이를 다지고 있습니다.
 
