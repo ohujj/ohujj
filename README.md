@@ -1,7 +1,7 @@
 # 안녕하세요, 백엔드 개발자 오현우 입니다 👋
 # Nice to meet you, I'm Hyeonwoo Oh, and i'm Back-End Developer 👋
 
-동시성·결제·운영 안정성 같은 백엔드 깊이를 다지기 위한 공부를 하고 있습니다.
+트레이드 오프·동시성·결제·운영 안정성 같은 백엔드 깊이를 다지기 위한 공부를 하고 있습니다.
 
 ## 🔭 Currently
 
@@ -18,14 +18,14 @@
 ## 🛠 Tech Stack
 
 **Backend**
-- Java 21, Spring Boot 3
+- Java, Spring Boot
 - Spring Data JPA, QueryDSL
 - Spring Security + JWT
 
 **Persistence / Cache / Search**
-- MySQL 8
+- MySQL
 - Redis (Redisson 분산락)
-- Elasticsearch 8
+- Elasticsearch
 
 **Infra / Ops**
 - AWS EC2
@@ -34,7 +34,7 @@
 
 **기타**
 - PortOne (PG 연동)
-- JUnit 5 (동시성 테스트 포함)
+- JUnit (동시성 테스트 포함)
 
 ## 🚀 Projects
 
