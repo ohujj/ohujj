@@ -1,6 +1,5 @@
 # 안녕하세요, 백엔드 개발자 오현우 입니다 👋
-# Nice to meet you, I'm Hyeonwoo Oh,
-# and i'm Back-End Developer 👋
+# Nice to meet you, I'm Back-End Developer Hyeonwoo Oh 👋
 
 트레이드오프·동시성·결제·운영 안정성 같은 백엔드 깊이를 다지는 것을 목표로 학습합니다.
 
