@@ -25,7 +25,6 @@
 **Persistence / Cache / Search**
 - MySQL
 - Redis (Redisson 분산락)
-- Elasticsearch
 
 **Infra / Ops**
 - AWS EC2
