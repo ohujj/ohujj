@@ -43,7 +43,7 @@
 
 - **재고 동시성 4단계 비교** — 비관적 락 → 낙관적 락 → Redisson 분산락 → Fencing Token
 - **결제** — PortOne PG 연동, 트랜잭션 분리, 멱등성, 보상 트랜잭션 (3원칙)
-- **검색** — Elasticsearch + 이벤트 기반 RDB-ES 동기화 (TransactionalEventListener)
+- **검색** — QueryDsl 활용
 - **CI/CD** — GitHub Actions → EC2 자동 배포
 
 ### 🎬 [Ne(o)rdinary Hackathon — Filmo](https://github.com/ohujj/CMC-Hackathon)
