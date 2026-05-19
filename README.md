@@ -76,6 +76,4 @@ Ne(o)rdinary Hackathon 우수상, Filmo - CMC + UMC 연합 해커톤 10팀 중 3
 ➡ [hyeonwoo5729.tistory.com](https://hyeonwoo5729.tistory.com)
 
 ## 📫 Contact
-
-- Blog: [hyeonwoo5729.tistory.com](https://hyeonwoo5729.tistory.com)
 - Email: hyeonwoo5729@gmail.com
