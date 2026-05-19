@@ -67,7 +67,7 @@ Java/Spring 기반 백엔드 개발을 하고 있습니다.
 Ne(o)rdinary Hackathon 우수상, Filmo - CMC + UMC 연합 해커톤 10팀 중 3위
 
 - Android 앱 클라이언트와 연동되는 백엔드 API를 구현했습니다.
-- 공통 응답 스펙, 예외 처리, 토큰 기반 인증 흐름을 구성했습니다.
+- 공통 응답 스펙, 예외 처리, 토큰 기반 인증 흐름을 구현했습니다.
 - GitHub Actions -> Docker Hub -> EC2 자동 배포 흐름을 구성했습니다.
 
 ## 📝 Tech Blog
