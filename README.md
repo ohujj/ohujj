@@ -23,13 +23,13 @@ Java/Spring 기반 백엔드 개발자입니다.
 
 ## 🛠 Tech Experience
 
-**Work Experience**
+**Used at Work**
 - Java
 - Spring Boot
 - MySQL
 - MyBatis
 
-**Project Experience**
+**Used in Projects**
 - Spring Data JPA
 - QueryDSL
 - Spring Security, JWT
