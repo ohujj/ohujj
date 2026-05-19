@@ -1,19 +1,25 @@
-# 안녕하세요, 백엔드 개발자 오현우 입니다 👋
+# 안녕하세요, 백엔드 개발자 오현우입니다 👋
 # Nice to meet you, I'm Back-End Developer Hyeonwoo Oh 👋
 
-트레이드오프·동시성·결제·운영 안정성 같은 백엔드 깊이를 다지는 것을 목표로 학습합니다.
+Java/Spring 기반 백엔드 개발자입니다.
+
+트랜잭션, 데이터 정합성, 결제/환불 상태 관리, 동시성 제어처럼 백엔드에서 중요한 문제를 재현하고 검증하는 방향으로 학습하고 있습니다.
 
 ## 🔭 Currently
 
-- **hanplane** — 한정판 커머스 백엔드, 동시성 4단계 narrative 구축 중
+- **hanplane** — 한정판 커머스 백엔드 프로젝트
+  - 주문/결제/환불 정합성
+  - 상품 재고 동시성 제어
+  - 쿠폰 발급 동시성 실험
+  - QueryDSL 기반 검색
 - 코딩 테스트 Level 2 안정화 목표(Programmers)
 - 기술 블로그 운영 — 학습 내용 / 트러블슈팅 / 의사결정 기록
 
 ## 🌱 Next
 
-- 결제 멱등성 제대로 구현 (Idempotency Key 헤더 기반)
-- 분산락 4단계 narrative 완성 (Redisson + Fencing Token)
-- Flyway 도입 검토 (ddl-auto 함정 경험 후)
+- 결제 멱등성 개선 — 클라이언트 Idempotency-Key 기반 중복 요청 방지
+- hanplane README 고도화 — 문제 재현, 해결 방식, 테스트 결과 정리
+- 과제 전형 대비 — REST API 설계, 예외 처리, 테스트 코드, README 작성 연습
 
 ## 🛠 Tech Stack
 
@@ -22,36 +28,50 @@
 - Spring Data JPA, QueryDSL
 - Spring Security + JWT
 
-**Persistence / Cache / Search**
+**Persistence / Cache**
 - MySQL
-- Redis (Redisson 분산락)
+- Redis, Redisson
 
 **Infra / Ops**
 - AWS EC2
 - Docker
-- GitHub Actions (CI/CD)
+- GitHub Actions
 
-**기타**
-- PortOne (PG 연동)
-- JUnit (동시성 테스트 포함)
+**External API / Test**
+- PortOne PG 연동
+- JUnit 5
 
 ## 🚀 Projects
 
 ### 🛒 [hanplane](https://github.com/ohujj/hanplane) — 한정판 커머스 백엔드
 
-한정판 발매 시점의 동시 주문 폭주를 견디는 백엔드. 동시성·결제·검색을 다층적으로 다루는 학습 프로젝트.
+한정판 상품 판매 상황에서 발생할 수 있는 주문, 결제, 환불, 재고 정합성 문제를 학습하기 위한 백엔드 프로젝트입니다.
 
-- **재고 동시성 4단계 비교** — 비관적 락 → 낙관적 락 → Redisson 분산락 → Fencing Token
-- **결제** — PortOne PG 연동, 트랜잭션 분리, 멱등성, 보상 트랜잭션 (3원칙)
-- **검색** — QueryDsl 활용
-- **CI/CD** — GitHub Actions → EC2 자동 배포
+- **재고 동시성**  
+  100명 동시 주문 테스트에서 Lost Update와 초과 판매 가능성을 재현한 뒤, DB 비관적 락을 적용해 재고 수량만큼만 주문이 성공하도록 검증했습니다.
+
+- **결제 정합성**  
+  PortOne PG 결제 승인 정보를 조회하고, PG 결제 금액과 내부 주문 금액을 비교해 금액 불일치 요청을 분리했습니다.  
+  결제 승인 중 예외가 발생하면 Payment는 FAIL로 기록하고, Order는 다시 결제 가능한 PENDING 상태로 복구하도록 처리했습니다.
+
+- **환불 정합성**  
+  환불 요청 시 결제 상태, 주문 소유자, 주문상품 환불 상태를 검증해 잘못된 환불 요청을 차단했습니다.  
+  수량 3개 주문상품 환불 금액, 이미 환불된 주문상품 재환불 방지, 다른 유저 주문 환불 방지 케이스를 테스트로 검증했습니다.
+
+- **검색 단순화**  
+  초기에는 Elasticsearch를 검토했지만, 현재 검색 조건에서는 RDB + QueryDSL로 충분하다고 판단해 Elasticsearch 의존성을 제거하고 QueryDSL 기반 검색으로 단순화했습니다.
+
+- **CI/CD**  
+  GitHub Actions와 AWS EC2를 활용해 자동 배포 흐름을 구성했습니다.
 
 ### 🎬 [Ne(o)rdinary Hackathon — Filmo](https://github.com/ohujj/CMC-Hackathon)
 
-영화관에서의 순간을 기록하는 서비스. 너디너리 해커톤 3등 수상.
+영화관에서의 순간을 기록하는 서비스입니다.  
+Ne(o)rdinary Hackathon 우수상, Filmo - CMC + UMC 연합 해커톤 10팀 중 3위
 
-- 무중단 Blue-Green 배포 (Traefik + Docker Compose)
-- Cloudflare Tunnel 로 외부 도메인 라우팅
+- 무중단 Blue-Green 배포 구성
+- Traefik + Docker Compose 기반 라우팅
+- Cloudflare Tunnel을 활용한 외부 도메인 연결
 - GitHub Actions → Docker Hub → EC2 자동 배포
 
 ## 📝 Tech Blog
