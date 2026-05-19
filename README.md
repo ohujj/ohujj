@@ -21,24 +21,21 @@ Java/Spring 기반 백엔드 개발자입니다.
 - hanplane README 고도화 — 재고 동시성, 결제 정합성, 테스트 결과 정리
 - REST API 설계와 테스트 코드 작성 역량 보강
 
-## 🛠 Tech Stack
+## 🛠 Experience
 
-**Backend**
-- Java, Spring Boot
-- Spring Data JPA, QueryDSL
-- Spring Security + JWT
-
-**Persistence / Cache**
+**Work Experience**
+- Java
+- Spring Boot
 - MySQL
+- MyBatis
+
+**Project Experience**
+- Spring Data JPA
+- QueryDSL
+- Spring Security, JWT
+- PortOne PG
 - Redis, Redisson
-
-**Infra / Ops**
-- AWS EC2
-- Docker
-- GitHub Actions
-
-**External API / Test**
-- PortOne PG 연동
+- AWS EC2, Docker, GitHub Actions
 - JUnit 5
 
 ## 🚀 Projects
