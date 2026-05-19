@@ -21,7 +21,7 @@ Java/Spring 기반 백엔드 개발자입니다.
 - hanplane README 고도화 — 재고 동시성, 결제 정합성, 테스트 결과 정리
 - REST API 설계와 테스트 코드 작성 역량 보강
 
-## 🛠 Experience
+## 🛠 Tech Experience
 
 **Work Experience**
 - Java
