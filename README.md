@@ -18,8 +18,8 @@ Java/Spring 기반 백엔드 개발자입니다.
 ## 🌱 Next
 
 - 결제 멱등성 개선 — 클라이언트 Idempotency-Key 기반 중복 요청 방지
-- hanplane README 고도화 — 문제 재현, 해결 방식, 테스트 결과 정리
-- 과제 전형 대비 — REST API 설계, 예외 처리, 테스트 코드, README 작성 연습
+- hanplane README 고도화 — 재고 동시성, 결제 정합성, 테스트 결과 정리
+- REST API 설계와 테스트 코드 작성 역량 보강
 
 ## 🛠 Tech Stack
 
