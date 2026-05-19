@@ -29,12 +29,19 @@ Java/Spring 기반 백엔드 개발을 하고 있습니다.
 - MySQL
 - MyBatis
 
+## 🛠 Tech Experience
+
+**Used at Work**
+- Java
+- Spring Boot
+- MySQL
+- MyBatis
+
 **Used in Projects**
 - Spring Data JPA
 - QueryDSL
 - Spring Security, JWT
 - PortOne PG
-- Redis, Redisson
 - AWS EC2, Docker, GitHub Actions
 - JUnit 5
 
