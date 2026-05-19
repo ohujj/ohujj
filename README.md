@@ -63,13 +63,12 @@ Java/Spring 기반 백엔드 개발자입니다.
 
 ### 🎬 [Ne(o)rdinary Hackathon — Filmo](https://github.com/ohujj/CMC-Hackathon)
 
-영화관에서의 순간을 기록하는 서비스입니다.  
+영화관에서의 순간을 기록하는 앱 서비스입니다.  
 Ne(o)rdinary Hackathon 우수상, Filmo - CMC + UMC 연합 해커톤 10팀 중 3위
 
-- 무중단 Blue-Green 배포 구성
-- Traefik + Docker Compose 기반 라우팅
-- Cloudflare Tunnel을 활용한 외부 도메인 연결
-- GitHub Actions → Docker Hub → EC2 자동 배포
+- Android 앱 클라이언트와 연동되는 백엔드 API를 구현했습니다.
+- 공통 응답 스펙, 예외 처리, 토큰 기반 인증 흐름을 구성했습니다.
+- GitHub Actions -> Docker Hub -> EC2 자동 배포 흐름을 구성했습니다.
 
 ## 📝 Tech Blog
 
