@@ -1,7 +1,7 @@
 # 안녕하세요, 백엔드 개발자 오현우입니다 👋
 # Nice to meet you, I'm Back-End Developer Hyeonwoo Oh 👋
 
-Java/Spring 기반 백엔드 개발자입니다.
+Java/Spring 기반 백엔드 개발을 하고 있습니다.
 
 트랜잭션, 데이터 정합성, 결제/환불 상태 관리, 동시성 제어처럼 백엔드에서 중요한 문제를 재현하고 검증하는 방향으로 학습하고 있습니다.
 
