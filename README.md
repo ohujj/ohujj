@@ -29,14 +29,6 @@ Java/Spring 기반 백엔드 개발을 하고 있습니다.
 - MySQL
 - MyBatis
 
-## 🛠 Tech Experience
-
-**Used at Work**
-- Java
-- Spring Boot
-- MySQL
-- MyBatis
-
 **Used in Projects**
 - Spring Data JPA
 - QueryDSL
@@ -59,7 +51,7 @@ Java/Spring 기반 백엔드 개발을 하고 있습니다.
   결제 승인 중 예외가 발생하면 Payment는 FAIL로 기록하고, Order는 다시 결제 가능한 PENDING 상태로 복구하도록 처리했습니다.
 
 - **환불 정합성**  
-  환불 요청 시 결제 성공 여부, 주문 소유자, 주문상품 환불 상태를 검증해 타 사용자 주문 환불과 중복 환불을 차단했습니다.
+  환불 요청 시 결제 성공 여부, 주문 소유자, 주문상품 환불 상태를 검증해 타 사용자 주문 환불과 중복 환불을 차단했습니다.  
   환불 금액 계산, 재환불 방지, 타 사용자 주문 환불 방지 케이스를 테스트로 검증했습니다.
 
 - **검색 단순화**  
