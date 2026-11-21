@@ -1,54 +1,53 @@
-# 오현우 | Backend Developer
+오현우 | Backend Developer
+고객의 요구사항을 이해하고, 실제 운영 환경에서 발견한 문제를 기술적 개선으로 연결하는 백엔드 개발자입니다.
 
-Java/Spring 기반으로 회원·수강신청·예약 도메인의 API를 개발하고 운영해왔습니다.
+Java/Spring 기반으로 공공시설 예약 및 회원관리 시스템을 개발·운영하고 있습니다. 고객사와 직접 요구사항을 협의하고, 기존 시스템의 제약과 운영 위험을 고려하여 해결 방안을 제안하고 구현한 경험이 있습니다.
 
-데이터 정합성, 동시성, 장애 추적처럼 서비스 신뢰성에 영향을 주는 문제를 중요하게 생각합니다.
+최근에는 Python과 Kubernetes를 활용한 ML 워크로드 진단 프로젝트를 진행하며, 새로운 기술 환경에서도 문제를 재현하고 원인을 분석하는 경험을 쌓고 있습니다.
+How I Work
+01. 고객의 요구사항과 운영 환경을 함께 이해합니다
+공공시설 예약 시스템에 신규 추첨제를 도입하면서 고객사 담당자와 요구사항 및 운영 정책을 협의했습니다.
 
----
+기존 레거시 시스템의 변경 위험을 고려해 별도 추첨 관리 페이지 구성을 제안하고 합의했으며, 관리자 화면부터 백엔드 로직까지 직접 개발했습니다.
+02. 현장에서 발견한 문제를 실제 개선으로 연결합니다
+신규 업장 오픈을 지원하는 과정에서 배치 스케줄 변경에 컨테이너 재시작이 필요한 운영상 제약을 확인했습니다.
 
-## Core Strengths
+이후 다른 통합예약 시스템을 재구축하면서 배치 작업의 추가·수정·삭제가 컨테이너 재시작 없이 반영되도록 개선했습니다.
+03. 실패 상황과 데이터 정합성을 고려해 설계합니다
+회원관리 솔루션을 개발하며 트랜잭션 경계와 실패 상황을 검토하고, 데이터 정합성과 운영 안정성을 고려한 설계·개선을 진행했습니다.
 
-* DB 비관적 락과 트랜잭션 설계를 통한 동시성·정합성 보장
-* 요청 로그와 DB 상태를 연결한 운영 장애 원인 추적
-* 외부 API 호출의 응답시간·호출량·서버 자원을 함께 고려한 최적화
-* 사용자 정보 변경에도 기준이 달라지지 않도록 하는 데이터 모델 설계
+동시 요청, 외부 시스템 연동 실패 등 정상적인 처리 흐름 밖에서 발생할 수 있는 문제에도 관심을 두고 있습니다.
+Featured Projects
+ml-job-triage
+Kubernetes ML Job 장애 재현 및 진단 실험
 
----
+Python 기반 진단 CLI를 작성하고, 로컬 Kubernetes 환경에서 CPU 배치 추론 Job의 메모리 부족 종료를 재현했습니다.
+- 배치 크기 96, 메모리 한도 64 MiB에서 OOMKilled 재현
+- 배치 크기 축소와 메모리 한도 상향을 각각 3회 실행해 작업 완료 검증
+- Job·Pod 상태, 이벤트, 로그를 함께 조회하는 진단 CLI 구현
+- 관측 결과가 충분하지 않을 때 원인 판단을 보류하도록 설계
+기술: Python · Kubernetes · Docker · kind
+Moyeo
+모임 일정·장소 조율 서비스 | 서버 단독 개발
 
-## Experience
+외부 API 호출 비용과 응답 성능, 데이터 정합성 및 실패 대응을 고려해 백엔드를 설계·개발했습니다.
+- Route API 병렬 처리로 응답시간 9.63초 → 5.90초 (38.8% 단축)
+- 추천 후보 범위와 API 호출량의 트레이드오프 검증
+- 외부 스토리지 연동 실패에 대비한 보상 처리 및 재시도 구조 설계
+- 참여 당시 출발지 정보 보존과 동시 참여 정합성 고려
+기술: Java · Spring Boot · JPA · MySQL · Docker · AWS EC2 · GitHub Actions
+Tech Experience
+Backend
 
-### 리버스아이티 | Backend Developer
+Java · Spring Boot · Spring Data JPA · MyBatis · QueryDSL · Spring Security
 
-**회원관리 솔루션 · 2025.02 - Present**
+Database / Infrastructure
 
-* **예약 동시성 및 데이터 정합성 개선**: 예약 가능 여부 확인과 저장 사이의 경쟁 조건을 확인하고, 동일 예약 자원에 DB 비관적 락을 적용했습니다. 검증부터 저장까지 하나의 트랜잭션으로 정리하고 락 대기 상황을 재현해 동시 요청의 순차 처리를 검증했습니다.
-* **결제 오류 추적 및 예외 처리 구조 개선**: 결제 완료 후 발생한 운영 오류에서 요청 로그와 DB 상태를 분석해 결제 API와 후속 API의 문제를 분리했습니다. 요청별 메시지를 공유 enum 객체에 저장하던 동시성 위험을 예외 인스턴스 기반으로 개선하고 재현 테스트로 검증했습니다.
-* **결제 장애 추적성 개선**: `traceId`, 처리 시각, PG 승인 번호를 기록해 서버 로그·내부 DB·PG 승인 내역을 요청 단위로 연결했습니다. 결제 실패 백업 데이터의 처리 시각 누락도 보완해 장애 발생 시점과 처리 흐름을 추적할 수 있도록 개선했습니다.
+MySQL · Docker · AWS EC2 · GitHub Actions · Jenkins
 
----
+Technical Exploration
 
-## Project
-
-### [Moyeo](https://github.com/ohujj/MOYEO) | 모임 일정·장소 조율 서비스
-
-**Backend Developer · 2026.06 - Present · PM 1 / Designer 1 / Web 2 / Backend 1**
-
-여러 사용자의 일정과 출발지를 바탕으로 모임 시간과 중간 장소를 조율하는 서비스의 백엔드를 단독 개발했습니다.
-
-**Tech**: Java, Spring Boot, Spring Data JPA, MySQL, Docker, AWS EC2, GitHub Actions, Kakao Route API
-
-#### 핵심 성과와 설계
-
-* **외부 API 병목 개선**: 후보별 Route API 호출을 최대 2개로 제한한 병렬 처리로 전환해, 동일 조건의 응답시간을 **9.63초에서 5.90초로 38.8% 단축**했습니다.
-* **추천 품질과 호출량의 균형**: 13개 출발지 시나리오에서 후보 수를 비교·검증해, `K=5`를 MVP 운영값으로 선택했습니다. `K=10` 대비 Route API 호출량을 **50% 수준**으로 유지하면서 후보 누락 가능성을 줄였습니다.
-* **동시 참여 정합성**: 모임 단위 비관적 락과 단일 트랜잭션으로 정원 마지막 1자리에 대한 동시 요청에서도 정원 초과를 방지했습니다.
-* **추천 기준 보존**: 참여 시점의 출발지 정보를 별도로 저장해, 이후 회원 주소가 바뀌어도 기존 모임의 추천 결과가 달라지지 않도록 설계했습니다.
-
----
-
-## Tech Experience
-
-* **Backend**: Java, Spring Boot, Spring Data JPA, MyBatis, QueryDSL, Spring Security
-* **Database / Infrastructure**: MySQL, Docker, AWS EC2, GitHub Actions, Jenkins
-
----
+Python · Kubernetes · kind
+Contact
+- Email: hyeonwoo5729@gmail.com
+- GitHub: github.com/ohujj
